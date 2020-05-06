@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="gemStore" ng-cloak="">
+<head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <script type="text/javascript" src="./js/angular.min.js"></script>
+    <script type="text/javascript" src="./js/angular-animate.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/directives.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+
+<body ng-controller="StoreController as store">
+<header>
+    <h1 class="text-center">Flatlander Crafted Gems</h1>
+    <h2 class="text-center">– an Angular store -</h2>
+</header>
+<div class="list-group">
+    <div class="list-group-item" ng-repeat="product in store.products">
+        <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
+        <product-gallery></product-gallery>
+        <product-tabs></product-tabs>
+    </div>
+
+</div>
+</body>
+</html>
